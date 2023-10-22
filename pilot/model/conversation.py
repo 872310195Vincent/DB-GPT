@@ -386,5 +386,18 @@ register_conv_template(
     )
 )
 
+# CodeFuse-chat template
+register_conv_template(
+    Conversation(
+        name="codefuse",
+        system="",
+        roles=("<|role_start|>human<|role_end|>", "<|role_start|>bot<|role_end|>"),
+        messages=(),
+        offset=0,
+        sep_style=SeparatorStyle.CHATML,
+        sep="\n",
+        stop_str="</s>",
+    )
+)
 
 # TODO Support other model conversation template

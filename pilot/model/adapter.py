@@ -413,6 +413,31 @@ class InternLMAdapter(BaseLLMAdaper):
         return model, tokenizer
 
 
+class CodeFuseLLMAdapter(BaseLLMAdaper):
+
+    def match(self, model_path: str):
+        return "codefuse" in model_path.lower()
+
+    def loader(self, model_path: str, from_pretrained_kwargs: dict):
+        from auto_gptq import AutoGPTQForCausalLM
+        os.environ["TOKENIZERS_PARALLELISM"] = "false"
+        tokenizer = AutoTokenizer.from_pretrained(model_path, 
+                                            trust_remote_code=True, 
+                                            use_fast=False,
+                                            lagecy=False)
+        tokenizer.padding_side = "left"
+        tokenizer.pad_token_id = tokenizer.convert_tokens_to_ids("<unk>")
+        tokenizer.eos_token_id = tokenizer.convert_tokens_to_ids("</s>")
+        model = AutoGPTQForCausalLM.from_quantized(model_path, 
+                                                    inject_fused_attention=False,
+                                                    inject_fused_mlp=False,
+                                                    use_cuda_fp16=True,
+                                                    disable_exllama=False,
+                                                    device_map='auto'   # Support multi-gpus
+                                                )
+        return model, tokenizer
+
+
 register_llm_model_adapters(VicunaLLMAdapater)
 register_llm_model_adapters(ChatGLMAdapater)
 register_llm_model_adapters(GuanacoAdapter)
@@ -424,6 +449,7 @@ register_llm_model_adapters(BaichuanAdapter)
 register_llm_model_adapters(WizardLMAdapter)
 register_llm_model_adapters(LlamaCppAdapater)
 register_llm_model_adapters(InternLMAdapter)
+register_llm_model_adapters(CodeFuseLLMAdapter)
 # TODO Default support vicuna, other model need to tests and Evaluate
 
 # just for test_py, remove this later

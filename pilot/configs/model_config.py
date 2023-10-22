@@ -78,6 +78,7 @@ LLM_MODEL_CONFIG = {
     "internlm-7b": os.path.join(MODEL_PATH, "internlm-chat-7b"),
     "internlm-7b-8k": os.path.join(MODEL_PATH, "internlm-chat-7b-8k"),
     "internlm-20b": os.path.join(MODEL_PATH, "internlm-20b-chat"),
+    "codefuse": os.path.join(MODEL_PATH, "CodeFuse-CodeLlama-34B-4bits"),
     # For test now
     "opt-125m": os.path.join(MODEL_PATH, "opt-125m"),
 }
