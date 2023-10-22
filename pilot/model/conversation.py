@@ -386,6 +386,7 @@ register_conv_template(
     )
 )
 
+
 # CodeFuse-chat template
 register_conv_template(
     Conversation(
@@ -399,5 +400,4 @@ register_conv_template(
         stop_str="</s>",
     )
 )
-
 # TODO Support other model conversation template

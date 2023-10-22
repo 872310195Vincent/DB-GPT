@@ -268,8 +268,9 @@ class CodeFuseChatAdapter(BaseChatAdpter):
 
     def get_default_conv_template(self, model_path: str) -> Conversation:
         return get_conv_template("codefuse")
+    
 
-
+register_llm_model_chat_adapter(CodeFuseChatAdapter)
 register_llm_model_chat_adapter(VicunaChatAdapter)
 register_llm_model_chat_adapter(ChatGLMChatAdapter)
 register_llm_model_chat_adapter(GuanacoChatAdapter)
@@ -281,7 +282,6 @@ register_llm_model_chat_adapter(BaichuanChatAdapter)
 register_llm_model_chat_adapter(WizardLMChatAdapter)
 register_llm_model_chat_adapter(LlamaCppChatAdapter)
 register_llm_model_chat_adapter(InternLMChatAdapter)
-register_llm_model_chat_adapter(CodeFuseChatAdapter)
 # Proxy model for test and develop, it's cheap for us now.
 register_llm_model_chat_adapter(ProxyllmChatAdapter)
 

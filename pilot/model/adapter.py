@@ -438,6 +438,7 @@ class CodeFuseLLMAdapter(BaseLLMAdaper):
         return model, tokenizer
 
 
+register_llm_model_adapters(CodeFuseLLMAdapter)
 register_llm_model_adapters(VicunaLLMAdapater)
 register_llm_model_adapters(ChatGLMAdapater)
 register_llm_model_adapters(GuanacoAdapter)
@@ -449,7 +450,6 @@ register_llm_model_adapters(BaichuanAdapter)
 register_llm_model_adapters(WizardLMAdapter)
 register_llm_model_adapters(LlamaCppAdapater)
 register_llm_model_adapters(InternLMAdapter)
-register_llm_model_adapters(CodeFuseLLMAdapter)
 # TODO Default support vicuna, other model need to tests and Evaluate
 
 # just for test_py, remove this later
