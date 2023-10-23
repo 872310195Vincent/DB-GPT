@@ -1,6 +1,6 @@
 database_name,table_name,table_comment,create_time,update_time,is_partition_table,partition_keys
 case_1_student_manager,students,,2023-10-23 21:15:00,2023-10-23 21:15:00,N,
-case_1_student_manager,students,,2023-10-24 21:15:00,2023-10-23 21:15:00,N,
+case_1_student_manager,students,学生信息表,2023-10-24 21:15:00,2023-10-23 21:15:00,N,
 case_1_student_manager,courses,课程信息表,2023-10-23 21:15:00,2023-10-23 21:15:00,N,
 case_1_student_manager,scores,学生成绩表,2023-10-23 21:15:00,2023-10-23 21:15:00,Y,"student_id, course_id"
 case_2_ecom,users,用户信息表,2023-10-23 21:15:00,2023-10-23 21:15:00,N,

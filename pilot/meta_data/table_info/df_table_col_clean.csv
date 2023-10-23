@@ -1,35 +1,35 @@
-,database_name,table_name,column_name,column_type,column_comment,table_comment,all_comment,all_comment_col_name,ddl_sql
-0,case_1_student_manager,courses,course_id	course_name	credit,INT	VARCHAR(100)	FLOAT,nan	课程名称	学分,课程信息表,case_1_student_manager.courses 课程信息表 学分,case_1_student_manager.courses 课程信息表 学 course_id	course_name	credit,"CREATE TABLE case_1_student_manager.courses (
+database_name,table_name,column_name,column_type,column_comment,table_comment,all_comment,all_comment_col_name,ddl_sql
+case_1_student_manager,courses,course_id course_name credit ,INT VARCHAR(100) FLOAT ,nan 课程名称 学分 ,课程信息表,case_1_student_manager.courses 课程信息表  课程名称 学分 ,case_1_student_manager.courses 课程信息表  课程名称 学分  course_id course_name credit ,"CREATE TABLE case_1_student_manager.courses (
     course_id INT,
     course_name VARCHAR(100) COMMENT '课程名称',
     credit FLOAT COMMENT '学分'
 ) COMMENT '课程信息表';"
-1,case_1_student_manager,scores,student_id	course_id	score	semester,INT	INT	INT	VARCHAR(50),nan	nan	得分	学期,学生成绩表,case_1_student_manager.scores 学生成绩表 学期,case_1_student_manager.scores 学生成绩表 学 student_id	course_id	score	semester,"CREATE TABLE case_1_student_manager.scores (
+case_1_student_manager,scores,student_id course_id score semester ,INT INT INT VARCHAR(50) ,nan nan 得分 学期 ,学生成绩表,case_1_student_manager.scores 学生成绩表   得分 学期 ,case_1_student_manager.scores 学生成绩表   得分 学期  student_id course_id score semester ,"CREATE TABLE case_1_student_manager.scores (
     student_id INT,
     course_id INT,
     score INT COMMENT '得分',
     semester VARCHAR(50) COMMENT '学期'
 ) COMMENT '学生成绩表';"
-2,case_1_student_manager,students,student_id	student_name	major	year_of_enrollment	student_age,INT	VARCHAR(100)	VARCHAR(100)	INT	INT,nan	学生姓名	专业	入学年份	学生年龄,,case_1_student_manager.students nan 学生年龄,case_1_student_manager.students nan 学生年 student_id	student_name	major	year_of_enrollment	student_age,"CREATE TABLE case_1_student_manager.students (
+case_1_student_manager,students,student_id student_name major year_of_enrollment student_age ,INT VARCHAR(100) VARCHAR(100) INT INT ,nan 学生姓名 专业 入学年份 学生年龄 ,学生信息表,case_1_student_manager.students 学生信息表  学生姓名 专业 入学年份 学生年龄 ,case_1_student_manager.students 学生信息表  学生姓名 专业 入学年份 学生年龄  student_id student_name major year_of_enrollment student_age ,"CREATE TABLE case_1_student_manager.students (
     student_id INT,
     student_name VARCHAR(100) COMMENT '学生姓名',
     major VARCHAR(100) COMMENT '专业',
     year_of_enrollment INT COMMENT '入学年份',
     student_age INT COMMENT '学生年龄'
-) COMMENT 'nan';"
-3,case_2_ecom,orders,order_id	user_id	product_id	quantity	order_date,INT	INT	INT	INT	DATE,nan	nan	nan	数量	订单日期,订单信息表,case_2_ecom.orders 订单信息表 订单日期,case_2_ecom.orders 订单信息表 订单日 order_id	user_id	product_id	quantity	order_date,"CREATE TABLE case_2_ecom.orders (
+) COMMENT '学生信息表';"
+case_2_ecom,orders,order_id user_id product_id quantity order_date ,INT INT INT INT DATE ,nan nan nan 数量 订单日期 ,订单信息表,case_2_ecom.orders 订单信息表    数量 订单日期 ,case_2_ecom.orders 订单信息表    数量 订单日期  order_id user_id product_id quantity order_date ,"CREATE TABLE case_2_ecom.orders (
     order_id INT,
     user_id INT,
     product_id INT,
     quantity INT COMMENT '数量',
     order_date DATE COMMENT '订单日期'
 ) COMMENT '订单信息表';"
-4,case_2_ecom,products,product_id	product_name	product_price,INT	VARCHAR(100)	FLOAT,nan	商品名称	商品价格,商品信息表,case_2_ecom.products 商品信息表 商品价格,case_2_ecom.products 商品信息表 商品价 product_id	product_name	product_price,"CREATE TABLE case_2_ecom.products (
+case_2_ecom,products,product_id product_name product_price ,INT VARCHAR(100) FLOAT ,nan 商品名称 商品价格 ,商品信息表,case_2_ecom.products 商品信息表  商品名称 商品价格 ,case_2_ecom.products 商品信息表  商品名称 商品价格  product_id product_name product_price ,"CREATE TABLE case_2_ecom.products (
     product_id INT,
     product_name VARCHAR(100) COMMENT '商品名称',
     product_price FLOAT COMMENT '商品价格'
 ) COMMENT '商品信息表';"
-5,case_2_ecom,users,user_id	user_name	user_email	registration_date	user_country,INT	VARCHAR(100)	VARCHAR(100)	DATE	VARCHAR(100),nan	用户名	用户邮箱	注册日期	用户国家,用户信息表,case_2_ecom.users 用户信息表 用户国家,case_2_ecom.users 用户信息表 用户国 user_id	user_name	user_email	registration_date	user_country,"CREATE TABLE case_2_ecom.users (
+case_2_ecom,users,user_id user_name user_email registration_date user_country ,INT VARCHAR(100) VARCHAR(100) DATE VARCHAR(100) ,nan 用户名 用户邮箱 注册日期 用户国家 ,用户信息表,case_2_ecom.users 用户信息表  用户名 用户邮箱 注册日期 用户国家 ,case_2_ecom.users 用户信息表  用户名 用户邮箱 注册日期 用户国家  user_id user_name user_email registration_date user_country ,"CREATE TABLE case_2_ecom.users (
     user_id INT,
     user_name VARCHAR(100) COMMENT '用户名',
     user_email VARCHAR(100) COMMENT '用户邮箱',

@@ -41,9 +41,9 @@ for (db_name, table_name), group_data in grouped_data:
         column_name = row['column_name']
         column_type = row['column_type']
         column_comment = row['column_comment']
-        column_names += column_name + '\t'
-        column_types += column_type + '\t'
-        column_comments += str(column_comment) + '\t'
+        column_names += column_name + ' '
+        column_types += column_type + ' '
+        column_comments += str(column_comment) + ' '
         if pd.isna(column_comment):
             ddl_sql += f"    {column_name} {column_type},\n"
         else:
@@ -54,13 +54,13 @@ for (db_name, table_name), group_data in grouped_data:
         ddl_sql += f" COMMENT '{table_comment}'"
     ddl_sql += ';'
     ddl_sql_statements[f'{db_name}.{table_name}'] = ddl_sql
-    all_comment = f"{db_name}.{table_name} {table_comment} {column_comment.replace('?','').replace('nan','')}"
-    all_comment_col_name = f"{db_name}.{table_name} {table_comment} {column_comment[:-1].replace('?','').replace('nan','')} {column_names[:-1]}"
-    df_table_col_clean.append([db_name, table_name, column_names[:-1],column_types[:-1],column_comments[:-1],table_comment,all_comment,all_comment_col_name,ddl_sql])
+    all_comment = f"{db_name}.{table_name} {table_comment} {column_comments.replace('?','').replace('nan','')}"
+    all_comment_col_name = f"{db_name}.{table_name} {str(table_comment).replace('nan','')} {column_comments.replace('?','').replace('nan','')} {column_names}"
+    df_table_col_clean.append([db_name, table_name, column_names,column_types,column_comments,table_comment,all_comment,all_comment_col_name,ddl_sql])
 df_table_col_clean = pd.DataFrame(df_table_col_clean,
                                   columns=['database_name', 'table_name', 'column_name', 'column_type', 'column_comment', 
                                            'table_comment', 'all_comment', 'all_comment_col_name', 'ddl_sql'])
-df_table_col_clean.to_csv('df_table_col_clean.csv')
+df_table_col_clean.to_csv('df_table_col_clean.csv',index=False)
 
 # Print or save the DDL SQL statements as per your requirement
 # for key, value in ddl_sql_statements.items():
