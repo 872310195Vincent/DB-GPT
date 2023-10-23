@@ -1,0 +1,31 @@
+,database_name,table_name,column_name,column_type,column_comment,table_comment,all_comment,ddl_sql
+0,case_1_student_manager,courses,course_id	course_name	credit,	,	,课程信息表,case_1_student_manager.courses 课程信息表 学分,"CREATE TABLE case_1_student_manager.courses (
+    course_id INT,
+    course_name VARCHAR(100) COMMENT '课程名称',
+    credit FLOAT COMMENT '学分'
+) COMMENT '课程信息表';"
+1,case_1_student_manager,scores,student_id	course_id	score	semester,	,	,学生成绩表,case_1_student_manager.scores 学生成绩表 学期,"CREATE TABLE case_1_student_manager.scores (
+    student_id INT,
+    course_id INT,
+    score INT COMMENT '得分',
+    semester VARCHAR(50) COMMENT '学期'
+) COMMENT '学生成绩表';"
+2,case_2_ecom,orders,order_id	user_id	product_id	quantity	order_date,	,	,订单信息表,case_2_ecom.orders 订单信息表 订单日期,"CREATE TABLE case_2_ecom.orders (
+    order_id INT,
+    user_id INT,
+    product_id INT,
+    quantity INT COMMENT '数量',
+    order_date DATE COMMENT '订单日期'
+) COMMENT '订单信息表';"
+3,case_2_ecom,products,product_id	product_name	product_price,	,	,商品信息表,case_2_ecom.products 商品信息表 商品价格,"CREATE TABLE case_2_ecom.products (
+    product_id INT,
+    product_name VARCHAR(100) COMMENT '商品名称',
+    product_price FLOAT COMMENT '商品价格'
+) COMMENT '商品信息表';"
+4,case_2_ecom,users,user_id	user_name	user_email	registration_date	user_country,	,	,用户信息表,case_2_ecom.users 用户信息表 用户国家,"CREATE TABLE case_2_ecom.users (
+    user_id INT,
+    user_name VARCHAR(100) COMMENT '用户名',
+    user_email VARCHAR(100) COMMENT '用户邮箱',
+    registration_date DATE COMMENT '注册日期',
+    user_country VARCHAR(100) COMMENT '用户国家'
+) COMMENT '用户信息表';"
