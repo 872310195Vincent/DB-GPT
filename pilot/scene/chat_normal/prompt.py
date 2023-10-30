@@ -9,7 +9,7 @@ PROMPT_SCENE_DEFINE = None
 
 CFG = Config()
 
-PROMPT_SEP = SeparatorStyle.SINGLE.value
+PROMPT_SEP = SeparatorStyle.TWO.value
 
 PROMPT_NEED_NEED_STREAM_OUT = True
 
@@ -23,6 +23,7 @@ prompt = PromptTemplate(
     output_parser=NormalChatOutputParser(
         sep=PROMPT_SEP, is_stream_out=PROMPT_NEED_NEED_STREAM_OUT
     ),
+    temperature=0.1
 )
 
 # CFG.prompt_templates.update({prompt.template_scene: prompt})
